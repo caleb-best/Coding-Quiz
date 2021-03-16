@@ -11,12 +11,17 @@
 
 }
 
-.hide {
+/* .hide {
     visibility: hidden;
+} */
+
+.hidden {
+    display: none;
 }
 
 button {
     font-family: 'JetBrains Mono', monospace;
+    cursor: pointer;
 }
 
 
@@ -28,6 +33,10 @@ h1, h2, h3 {
 
 h1 {
     font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
 }
 
 /* ===== TIMER ====== */
@@ -87,6 +96,38 @@ h1 {
     background-color: rgba(255, 123, 0, 0.739);
 }
 
+/* ===== QUESTION SCREEN ====== */
+#quiz-prompts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.questionUser {
+    margin: 50px;
+    padding: 5px;
+    
+}
+
+.answersList {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.answersList button {
+    height: 100px;
+    margin: 10px 0;
+    font-size: 22px;
+    border-radius: 5px;
+    background-color: rgb(203, 25, 219);
+    color: white;
+    text-transform: uppercase;
+}
+.answersList button:hover {
+    background-color: rgba(203, 25, 219, 0.76);
+}
 
 
 
