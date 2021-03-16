@@ -36,9 +36,9 @@
 
 
     <!-- Quiz Questions Section -->
-    <section id="quiz-prompts" class="questions hide">
+    <section id="quiz-prompts" class="questions">
         
-        <div id="quiz-questions">
+        <div id="quiz-questions" class="hidden">
             <!-- Question for user -->
             <h2 id="question" class="questionUser">
                 Question
@@ -56,20 +56,24 @@
 
 
     <!-- End of Quiz Section -->
-    <section id="end-quiz" class="endScreen hide hidden">
-        <h2>Final Score</h2>
-        <p id = "final-score"></p>
+    <section id="end-quiz" class="">
+        <div class="endScreen">  
+            <h2>Final Score</h2>
+            <p>Congratulations you scored...</p>
+            <h3 id="final-score">100</h3>
 
         <div class="end-quiz-input">
             <p class="end-quiz-p">
                 Enter initials:
             </p>
                 <input type="text" placeholder="Enter your initials" name="initials" id="initials" />
-                <button id="saveScore" class="btn-submit">Save Score</button>
-                <button id="leaderboards" class="leaderboard-btn">leaderboards</button>
+                <button id="saveScore" class="btn-submit save-btn">Save Score</button>
+                <button id="leaderboards" class="leaderboard-btn">Leaderboards</button>
                 <button id="playAgain" class="again-btn">Play Again</button>
             
         </div>
+        </div>
+      
     </section>
 
     <section id="leaderboards" class="highScore hide hidden">

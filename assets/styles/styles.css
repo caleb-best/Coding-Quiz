@@ -11,9 +11,9 @@
 
 }
 
-/* .hide {
+.hide {
     visibility: hidden;
-} */
+} 
 
 .hidden {
     display: none;
@@ -27,7 +27,7 @@ button {
 
 /* ===== TYPOGRAPHY ====== */
 
-h1, h2, h3 {
+h1, h2 {
     color: rgb(245, 240, 240);
 }
 
@@ -37,6 +37,11 @@ h1 {
 
 h2 {
     font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 2rem;
 }
 
 /* ===== TIMER ====== */
@@ -128,6 +133,68 @@ h2 {
 .answersList button:hover {
     background-color: rgba(203, 25, 219, 0.76);
 }
+
+/* ===== POST GAME SCREEN ====== */
+
+.endScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+}
+
+.endScreen p {
+    color: white ;
+}
+
+#final-score {
+    color: rgb(255, 251, 0);
+    margin: 30px;
+}
+
+.end-quiz-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.end-quiz-input input {
+    height: 100px;
+    width: 175%;
+    font-size: 24px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.end-quiz-input button {
+    height: 100px;
+    width: 175%;
+    font-size: 24px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.save-btn {
+    background-color: rgb(223, 43, 184);
+}
+.save-btn:hover {
+    background-color: rgba(223, 43, 184, 0.733);
+}
+
+.again-btn {
+    background-color: rgb(25, 87, 219);
+}
+
+.again-btn:hover {
+    background-color: rgba(25, 86, 219, 0.678);
+}
+
 
 
 
