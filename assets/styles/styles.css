@@ -1,3 +1,4 @@
+/* ===== GLOBAL ====== */
 :root {
     background-color: rgb(26, 26, 26);
     font-family: 'JetBrains Mono', monospace;
@@ -14,6 +15,11 @@
     visibility: hidden;
 }
 
+button {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+
 /* ===== TYPOGRAPHY ====== */
 
 h1, h2, h3 {
@@ -28,7 +34,59 @@ h1 {
 
 #timer {
     text-align: right;
-    margin: 30px;
+    margin: 60px;
     color: rgb(245, 240, 240);
     text-transform: uppercase;
 }
+
+
+/* ===== HOME SCREEN ====== */
+.main-content {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;  
+    width: 100vh;
+ 
+}
+
+#initial-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    padding: 40px;
+}
+
+#initial-btn button {
+    width: 50%;
+    height: 100px;
+    margin: 20px 0;
+    padding: 10px 0;
+    font-size: 30px;
+    letter-spacing: 2;
+    
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.main-btn {
+    background-color: rgb(25, 87, 219);
+}
+
+.main-btn:hover {
+    background-color: rgba(25, 86, 219, 0.76);
+}
+
+.leaderboard-btn {
+    background-color: rgb(255, 123, 0);
+}
+
+.leaderboard-btn:hover {
+    background-color: rgba(255, 123, 0, 0.739);
+}
+
+
+
+
