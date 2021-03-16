@@ -4,20 +4,81 @@
 <title>Javascript Coding Quiz</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="stylesheet" href="../Coding-Quiz/assets/styles/styles.css">
 </head>
-
 <body>
-    
+    <header>
+        <!-- Header timer -->
+        <div id= "timer">
+            <span>Time: 
+                <b id = "#timeLeft">0</b>
+            </span>
+        </div>
+    </header>
+    <!-- Home Screen -->
+    <main id = "playScreen" class="main-content">
+        <h1>Javascript Coding Quiz</h1>
+
+        <div id="initial-btn">
+            <button id="play-btn" class="main-btn">
+                Play
+            </button>
+
+            <button id="score-btn" class="leaderboard-btn">
+                Leaderboards
+            </button>
+        </div>
+    </main>
 
 
+    <!-- Quiz Questions Section -->
+    <section id="quiz-prompts" class="questions hide">
+        
+        <div id="quiz-questions">
+            <!-- Question for user -->
+            <h2 id="question" class="questionUser">
+                Question
+            </h2>
+            <!-- Users Potential Answers -->
+            <div id="answers" class="answersList">
+                <button id="a" class="abcd" onclick="rightWrong('a')">a</button>
+                <button id="b" class="abcd" onclick="rightWrong('b')">b</button>
+                <button id="c" class="abcd" onclick="rightWrong('c')">c</button>
+                <button id="d" class="abcd" onclick="rightWrong('d')">d</button>
+            <div>
+
+        </div>
+    </section>
 
 
+    <!-- End of Quiz Section -->
+    <section id="end-quiz" class="endScreen hide">
+        <h2>Final Score</h2>
+        <p id = "final-score"></p>
 
+        <div class="end-quiz-input">
+            <p class="end-quiz-p">
+                Enter initials:
+            </p>
+                <input type="text" placeholder="Enter your initials" name="initials" id="initials" />
+                <button id="saveScore" class="btn-submit">Save Score</button>
+                <button id="leaderboards" class="leaderboard-btn">leaderboards</button>
+                <button id="playAgain" class="again-btn">Play Again</button>
+            
+        </div>
+    </section>
 
-
-
-
+    <section id="leaderboards" class="highScore hide">
+        <h3>Leaderboards</h3>
+        <ol id="leaderboard-initials">
+            <!-- li here -->
+        </ol>
+        <div class="leaderboard-btn">
+            <button class="back-btn">Go Back</button>
+        </div>
+        
+    </section>
 
     <script src="../Coding-Quiz/assets/js/script.js"></script>
 </body>
