@@ -59,6 +59,7 @@ var timeInterval;
 
 //Questions and Answer Variable
 var quizPrompts = document.getElementById('quiz-prompts');
+quizPrompts.style.display = 'none';
 var askQuestion = document.getElementById('question');
 var btnA = document.getElementById('a');
 var btnB = document.getElementById('b');
@@ -67,6 +68,7 @@ var btnD = document.getElementById('d');
 
 //End Sceen Variables
 var endQuiz = document.getElementById('end-quiz');
+endQuiz.style.display = 'none';
 var enterName = document.getElementById('initials');
 var saveScore = document.getElementById('saveScore');
 var leaderboardsBtn = document.getElementById('leaderboards');
@@ -75,12 +77,13 @@ var finalScore = document.getElementById('final-score');
 
 //Leaderboard Screen Variable
 var leaderboardScreen = document.getElementById('leaderboardScreen');
+leaderboardScreen.style.display = 'none';
 var initials = document.getElementById('leaderboard-initials');
-var backBtn = document.getElementsByClassName('back-btn');
+var backBtn = document.getElementById('back-home');
 
-var score = 0;
-var runningQuestionIndex = 0;
-var lastQuestionIndex = questions.length -1;
+
+
+
 
 //Home Screen Functions
 //ON CLick hide other screens and start the quiz and timer
@@ -89,6 +92,7 @@ function startQuiz() {
     endQuiz.style.display = 'none';
     leaderboardScreen.style.display = 'none';
     timer.style.visibility = 'visible';
+    quizPrompts.style.display = 'flex';
 
     timerInterval = setInterval(function() {
         timeLeft--;
@@ -108,13 +112,29 @@ console.log(startQuiz)
 
 //opens the leaderboards on main screen
 function openLeaderboard() {
+    leaderboardScreen.style.display = 'flex';
     homeScreen.style.display = 'none';
     endQuiz.style.display = 'none';
     quizPrompts.style.display = 'none';
     timer.style.visibility = 'hidden';
 }
+//triggers leaderboard button home screen
 scoreBtn.addEventListener("click", openLeaderboard);
-console.log(openLeaderboard)
+console.log(openLeaderboard);
+
+function backHome() {
+    leaderboardScreen.style.display = 'none';
+    homeScreen.style.display = 'block';
+    endQuiz.style.display = 'none';
+    quizPrompts.style.display = 'none';
+    timer.style.visibility = 'hidden';
+}
+
+backBtn.addEventListener("click", backHome);
+
+var score = 0;
+var runningQuestionIndex = 0;
+var lastQuestionIndex = questions.length -1;
 
 
 
