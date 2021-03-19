@@ -41,5 +41,41 @@ var questions = [
         correctAnswer: 'c'
     }
 ];
+//log array
+console.log(questions);
 
-console.log(questions)
+//DOM ELEMENTS 
+var quizPrompts = document.getElementById('questions');
+var homeScreen = document.getElementById('playScreen');
+var endQuiz = document.getElementById('end-quiz');
+var finalScore = document.getElementById('final-score');
+var startQuiz = document.getElementById('play-btn');
+var timer = document.getElementById('timer');
+var timeLeft = document.getElementById('timeLeft');
+
+//Questions and Answer Variable
+var askQuestion = document.getElementById('question');
+var btnA = document.getElementById('a');
+var btnB = document.getElementById('b');
+var btnC = document.getElementById('c');
+var btnD = document.getElementById('d');
+
+//End Sceen Variables
+var endQuiz = document.getElementById('end-quiz');
+var enterName = document.getElementById('initials');
+var saveScore = document.getElementById('saveScore');
+var leaderboardsBtn = document.getElementById('leaderboard-info');
+var playAgain = document.getElementById('playAgain');
+
+//Leaderboard Screen Variable
+var leaderboards = document.getElementById('leaderboards');
+var initials = document.getElementById('leaderboard-initials');
+var backBtn = document.getElementsByClassName('back-btn');
+
+
+
+
+
+
+
+
