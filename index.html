@@ -13,9 +13,9 @@
 <body>
     <header>
         <!-- Header timer -->
-        <div id= "timer" class="hide">
+        <div id= "timer">
             <span>Time: 
-                <b id = "timeLeft">0</b>
+                <b id = "timeNumber"></b>
             </span>
         </div>
     </header>
@@ -38,17 +38,17 @@
     <!-- Quiz Questions Section -->
     <section id="quiz-prompts" class="questions">
         
-        <div id="quiz-questions" class="hidden">
+        <div id="quiz-questions" class="">
             <!-- Question for user -->
             <h2 id="question" class="questionUser">
                 Question
             </h2>
             <!-- Users Potential Answers -->
             <div id="answers" class="answersList">
-                <button id="a" class="abcd" onclick="rightWrong('a')">a</button>
-                <button id="b" class="abcd" onclick="rightWrong('b')">b</button>
-                <button id="c" class="abcd" onclick="rightWrong('c')">c</button>
-                <button id="d" class="abcd" onclick="rightWrong('d')">d</button>
+                <button id="a" class="abcd" onclick="rightWrong('a')"></button>
+                <button id="b" class="abcd" onclick="rightWrong('b')"></button>
+                <button id="c" class="abcd" onclick="rightWrong('c')"></button>
+                <button id="d" class="abcd" onclick="rightWrong('d')"></button>
             <div>
 
         </div>
@@ -56,7 +56,7 @@
 
 
     <!-- End of Quiz Section -->
-    <section id="end-quiz" class="hidden">
+    <section id="end-quiz" class="">
         <div class="endScreen">  
             <h2>Final Score</h2>
             <p>Congratulations you scored...</p>
@@ -76,7 +76,7 @@
       
     </section>
 
-    <section id="leaderboards" class="hidden">
+    <section id="leaderboardScreen" class="">
         
         <div class="leaderboard-info">
             <h2>Leaderboards</h2>

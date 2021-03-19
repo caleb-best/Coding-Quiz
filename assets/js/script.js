@@ -45,15 +45,19 @@ var questions = [
 console.log(questions);
 
 //DOM ELEMENTS 
-var quizPrompts = document.getElementById('questions');
+
 var homeScreen = document.getElementById('playScreen');
-var endQuiz = document.getElementById('end-quiz');
-var finalScore = document.getElementById('final-score');
-var startQuiz = document.getElementById('play-btn');
+var scoreBtn = document.getElementById('score-btn');
+var playBtn = document.getElementById('play-btn');
+
+//Timer
 var timer = document.getElementById('timer');
-var timeLeft = document.getElementById('timeLeft');
+var timeNumber = document.getElementById('timeNumber');
+var timeLeft = 60;
+var timeInterval;
 
 //Questions and Answer Variable
+var quizPrompts = document.getElementById('questions');
 var askQuestion = document.getElementById('question');
 var btnA = document.getElementById('a');
 var btnB = document.getElementById('b');
@@ -64,13 +68,44 @@ var btnD = document.getElementById('d');
 var endQuiz = document.getElementById('end-quiz');
 var enterName = document.getElementById('initials');
 var saveScore = document.getElementById('saveScore');
-var leaderboardsBtn = document.getElementById('leaderboard-info');
+var leaderboardsBtn = document.getElementById('leaderboards');
 var playAgain = document.getElementById('playAgain');
+var finalScore = document.getElementById('final-score');
 
 //Leaderboard Screen Variable
-var leaderboards = document.getElementById('leaderboards');
+var leaderboardScreen = document.getElementById('leaderboardScreen');
 var initials = document.getElementById('leaderboard-initials');
 var backBtn = document.getElementsByClassName('back-btn');
+
+var score = 0;
+var runningQuestionIndex = 0;
+var lastQuestionIndex = questions.length -1;
+
+//Home Screen Functions
+//ON CLick hide other screens and start the quiz and timer
+function startQuiz() {
+    homeScreen.style.display = 'none';
+    endQuiz.style.display = 'none';
+    leaderboardScreen.style.display = 'none';
+
+    timerInterval = setInterval(function() {
+        timeLeft--;
+        timeNumber.textContent = timeLeft;
+
+        if (timeLeft === 0 || timeLeft < 0) {
+            alert('Out of Time!');
+            clearInterval(timerInterval);
+            enterScore();
+        }
+    }, 1000);
+
+}
+playBtn.addEventListener("click", startQuiz);
+console.log(startQuiz)
+
+
+
+
 
 
 
