@@ -52,12 +52,13 @@ var playBtn = document.getElementById('play-btn');
 
 //Timer
 var timer = document.getElementById('timer');
+timer.style.visibility = 'hidden';
 var timeNumber = document.getElementById('timeNumber');
 var timeLeft = 60;
 var timeInterval;
 
 //Questions and Answer Variable
-var quizPrompts = document.getElementById('questions');
+var quizPrompts = document.getElementById('quiz-prompts');
 var askQuestion = document.getElementById('question');
 var btnA = document.getElementById('a');
 var btnB = document.getElementById('b');
@@ -87,6 +88,7 @@ function startQuiz() {
     homeScreen.style.display = 'none';
     endQuiz.style.display = 'none';
     leaderboardScreen.style.display = 'none';
+    timer.style.visibility = 'visible';
 
     timerInterval = setInterval(function() {
         timeLeft--;
@@ -100,9 +102,19 @@ function startQuiz() {
     }, 1000);
 
 }
+//triggers function startQuiz
 playBtn.addEventListener("click", startQuiz);
 console.log(startQuiz)
 
+//opens the leaderboards on main screen
+function openLeaderboard() {
+    homeScreen.style.display = 'none';
+    endQuiz.style.display = 'none';
+    quizPrompts.style.display = 'none';
+    timer.style.visibility = 'hidden';
+}
+scoreBtn.addEventListener("click", openLeaderboard);
+console.log(openLeaderboard)
 
 
 
