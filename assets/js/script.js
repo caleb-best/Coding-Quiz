@@ -93,6 +93,7 @@ function startQuiz() {
     leaderboardScreen.style.display = 'none';
     timer.style.visibility = 'visible';
     quizPrompts.style.display = 'flex';
+    quizQuestions();
 
     timerInterval = setInterval(function() {
         timeLeft--;
@@ -122,6 +123,7 @@ function openLeaderboard() {
 scoreBtn.addEventListener("click", openLeaderboard);
 console.log(openLeaderboard);
 
+//button on leaderboard screen takes you back home
 function backHome() {
     leaderboardScreen.style.display = 'none';
     homeScreen.style.display = 'block';
@@ -129,12 +131,48 @@ function backHome() {
     quizPrompts.style.display = 'none';
     timer.style.visibility = 'hidden';
 }
-
+//triggers back home event
 backBtn.addEventListener("click", backHome);
 
-var score = 0;
+//Starting point for score
+score = 0;
+
+//Question Index
 var runningQuestionIndex = 0;
 var lastQuestionIndex = questions.length -1;
+// Generates the Questions
+function quizQuestions(){
+    var q = questions[runningQuestionIndex];
+
+    askQuestion.innerHTML = q.question;
+    btnA.innerHTML = q.answerA;
+    btnB.innerHTML = q.answerB;
+    btnC.innerHTML = q.answerC;
+    btnD.innerHTML = q.answerD;
+}
+
+console.log(quizQuestions);
+
+function rightWrong(answer) {
+    //checks if the answer is correct or not
+    if (answer === questions[runningQuestionIndex].correctAnswer) {
+        correctAnswer();
+    } else {
+        wrongAnswer();
+    }
+    //check if there are any more questions to ask
+    if (runningQuestionIndex < lastQuestionIndex) {
+        runningQuestionIndex++;
+        quizQuestions();
+    }
+    //Enters the score if all questions have been answered
+    else {
+        enterScore();
+    }
+
+};
+
+
 
 
 
