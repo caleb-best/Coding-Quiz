@@ -134,9 +134,6 @@ function backHome() {
 //triggers back home event
 backBtn.addEventListener("click", backHome);
 
-//Starting point for score
-score = 0;
-
 //Question Index
 var runningQuestionIndex = 0;
 var lastQuestionIndex = questions.length -1;
@@ -149,6 +146,7 @@ function quizQuestions(){
     btnB.innerHTML = q.answerB;
     btnC.innerHTML = q.answerC;
     btnD.innerHTML = q.answerD;
+    console.log(score);
 }
 
 console.log(quizQuestions);
@@ -171,6 +169,20 @@ function rightWrong(answer) {
     }
 
 };
+
+//Starting point for score
+var score = 0;
+
+function correctAnswer() {
+    alert('Correct Answer');
+    score++;
+}
+
+function wrongAnswer() {
+    alert('Wrong Answer -10s')
+    timeLeft -= 10;
+}
+
 
 
 
