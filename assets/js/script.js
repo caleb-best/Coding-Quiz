@@ -102,7 +102,7 @@ function startQuiz() {
         if (timeLeft === 0 || timeLeft < 0) {
             alert('Out of Time!');
             clearInterval(timerInterval);
-            enterScore();
+            endScreen();
         }
     }, 1000);
 
@@ -165,7 +165,7 @@ function rightWrong(answer) {
     }
     //Enters the score if all questions have been answered
     else {
-        enterScore();
+        endScreen();
     }
 
 };
@@ -175,7 +175,7 @@ var score = 0;
 
 function correctAnswer() {
     alert('Correct Answer');
-    score++;
+    score += 100;
 }
 
 function wrongAnswer() {
@@ -183,8 +183,27 @@ function wrongAnswer() {
     timeLeft -= 10;
 }
 
+function endScreen() {
+    leaderboardScreen.style.display = 'none';
+    homeScreen.style.display = 'none';
+    endQuiz.style.display = 'flex';
+    quizPrompts.style.display = 'none';
+    timer.style.visibility = 'hidden';
 
 
+}
+
+function replay() {
+    homeScreen.style.display = 'block';
+    endQuiz.style.display = 'none';
+    leaderboardScreen.style.display = 'none';
+    timer.style.visibility = 'hidden';
+    quizPrompts.style.display = 'none';
+}
+
+//makes play again button function
+playAgain.addEventListener("click", replay);
+console.log(replay)
 
 
 
