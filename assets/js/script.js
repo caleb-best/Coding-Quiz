@@ -189,6 +189,8 @@ function endScreen() {
     quizPrompts.style.display = 'none';
     timer.style.visibility = 'hidden';
 
+    yourScore();
+
 
 }
 
@@ -199,8 +201,12 @@ function replay() {
   playAgain.addEventListener("click", replay, false);
   console.log(replay)
   
-
-
+//Make user score appear
+function yourScore(){
+    finalScore.innerHTML = score;
+    
+}
+console.log(yourScore);
 
 
 
