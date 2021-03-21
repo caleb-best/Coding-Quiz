@@ -72,6 +72,7 @@ endQuiz.style.display = 'none';
 var enterName = document.getElementById('initials');
 var saveScore = document.getElementById('saveScore');
 var leaderboardsBtn = document.getElementById('leaderboards');
+var btnLeaderboard = document.getElementsByClassName('leaderboard-btn');
 var playAgain = document.getElementById('playAgain');
 var finalScore = document.getElementById('final-score');
 
@@ -191,9 +192,7 @@ function endScreen() {
     quizPrompts.style.display = 'none';
     timer.style.visibility = 'hidden';
 
-    yourScore();
-
-
+    yourScore()
 }
 
 function replay() {
@@ -216,9 +215,21 @@ function saveName(event) {
         return false;
     
     }else if (typeof(Storage) !== "undefined") {
-        localStorage.setItem("Name", enterName.value);
-        localStorage.setItem("Score", score);
+        const userData = {
+            name: enterName.value, 
+            score: score
+        };
+        localStorage.setItem("User", JSON.stringify(userData));   
         event.preventDefault();
     }
 };
 saveScore.addEventListener("click", saveName);
+
+//Inserting leaderboard names from local storage
+function generateScore() {
+    localStorage.getItem('user');
+    console.log(generateScore)
+}
+
+
+
