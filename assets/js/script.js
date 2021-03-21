@@ -117,9 +117,11 @@ function openLeaderboard() {
     endQuiz.style.display = 'none';
     quizPrompts.style.display = 'none';
     timer.style.visibility = 'hidden';
+    generateScore();
 }
 //triggers leaderboard button home screen
 scoreBtn.addEventListener("click", openLeaderboard);
+leaderboardsBtn.addEventListener('click', openLeaderboard);
 console.log(openLeaderboard);
 
 //button on leaderboard screen takes you back home
@@ -199,18 +201,24 @@ function replay() {
   }
   //makes play again button function
   playAgain.addEventListener("click", replay, false);
-  console.log(replay)
+
   
 //Make user score appear
 function yourScore(){
-    finalScore.innerHTML = score;
-    
+    finalScore.innerHTML = score;   
 }
-console.log(yourScore);
 
-
-
-
-
-
-
+//saves user data to local storage
+function saveName(event) {
+    if (enterName.value === ""){
+        alert('Error, Must input a name, Please try again.');
+        event.preventDefault();
+        return false;
+    
+    }else if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("Name", enterName.value);
+        localStorage.setItem("Score", score);
+        event.preventDefault();
+    }
+};
+saveScore.addEventListener("click", saveName);
