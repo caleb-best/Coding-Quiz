@@ -72,7 +72,6 @@ endQuiz.style.display = 'none';
 var enterName = document.getElementById('initials');
 var saveScore = document.getElementById('saveScore');
 var leaderboardsBtn = document.getElementById('leaderboards');
-var btnLeaderboard = document.getElementsByClassName('leaderboard-btn');
 var playAgain = document.getElementById('playAgain');
 var finalScore = document.getElementById('final-score');
 
@@ -207,29 +206,60 @@ function yourScore(){
     finalScore.innerHTML = score;   
 }
 
-//saves user data to local storage
-function saveName(event) {
-    if (enterName.value === ""){
+
+
+
+saveScore.addEventListener("click", function (event){
+var userInput = enterName.value;
+    if(userInput === "" ){
         alert('Error, Must input a name, Please try again.');
         event.preventDefault();
-        return false;
-    
-    }else if (typeof(Storage) !== "undefined") {
-        const userData = {
-            name: enterName.value, 
-            score: score
-        };
-        localStorage.setItem("User", JSON.stringify(userData));   
-        event.preventDefault();
     }
-};
-saveScore.addEventListener("click", saveName);
+    else {
+        event.preventDefault();
+        alert('Your score was saved!')
+        var finalScore = {
+            User: enterName.value,
+            Score: score
+        }       
+    }
 
-//Inserting leaderboard names from local storage
-function generateScore() {
-    localStorage.getItem('user');
-    console.log(generateScore)
+    var storedScores = localStorage.getItem("storedScores")
+    if (storedScores === null) {
+        storedScores = [];
+    } else {
+        storedScores = JSON.parse(storedScores);
+    }
+    storedScores.push(finalScore)
+    var newScore = JSON.stringify(storedScores);
+    localStorage.setItem("storedScores", newScore);
+    
+}); 
+
+var storedScores = JSON.parse(localStorage.getItem ("storedScores"));
+
+
+function generateScore(){   
+    var highscore = JSON.parse(localStorage.getItem("storedScores")) || [];
+    highscore.sort(function (a, b) {
+        return a.storedScores, b.score ? 1 : -1;   
+    });
+
+    highscore.forEach(function (item) {
+      var listIt = document.createElement("li");
+      listIt.textContent = item.User + " " + item.Score;
+      initials.appendChild(listIt);
+    });
+
 }
+
+saveScore.addEventListener("click", generateScore);
+
+
+
+
+
+
 
 
 
