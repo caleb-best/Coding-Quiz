@@ -171,17 +171,17 @@ function rightWrong(answer) {
 
 //Starting point for score
 var score = 0;
-
+//gives 100 point if correct answer
 function correctAnswer() {
     alert('Correct Answer');
     score += 100;
 }
-
+//-10s for wrong answer
 function wrongAnswer() {
     alert('Wrong Answer -10s')
     timeLeft -= 10;
 }
-
+//only shows the end screen and activates function to get user score
 function endScreen() {
     leaderboardScreen.style.display = 'none';
     homeScreen.style.display = 'none';
@@ -192,6 +192,7 @@ function endScreen() {
     yourScore()
 }
 
+//reloads page on click
 function replay() {
     reload = location.reload();
   }
@@ -204,15 +205,15 @@ function yourScore(){
     finalScore.innerHTML = score;   
 }
 
-
-
-
+//Adds user score to local storage
 saveScore.addEventListener("click", function (event){
 var userInput = enterName.value;
+    //must have a name to go with score
     if(userInput === "" ){
         alert('Error, Must input a name, Please try again.');
         event.preventDefault();
     }
+    //score was saved to storage
     else {
         event.preventDefault();
         alert('Your score was saved!')
@@ -222,6 +223,7 @@ var userInput = enterName.value;
         }       
     }
 
+    //gets the data from local storage and puts it in highscore list
     var storedScores = localStorage.getItem("storedScores")
     if (storedScores === null) {
         storedScores = [];
@@ -235,8 +237,7 @@ var userInput = enterName.value;
 }); 
 
 var storedScores = JSON.parse(localStorage.getItem ("storedScores"));
-
-
+//orders highscore from high to low
 function generateScore(){   
     var highscore = JSON.parse(localStorage.getItem("storedScores")) || [];
     highscore.sort(function (a, b) {
