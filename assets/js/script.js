@@ -71,7 +71,6 @@ var endQuiz = document.getElementById('end-quiz');
 endQuiz.style.display = 'none';
 var enterName = document.getElementById('initials');
 var saveScore = document.getElementById('saveScore');
-var leaderboardsBtn = document.getElementById('leaderboards');
 var playAgain = document.getElementById('playAgain');
 var finalScore = document.getElementById('final-score');
 
@@ -121,7 +120,6 @@ function openLeaderboard() {
 }
 //triggers leaderboard button home screen
 scoreBtn.addEventListener("click", openLeaderboard);
-leaderboardsBtn.addEventListener('click', openLeaderboard);
 console.log(openLeaderboard);
 
 //button on leaderboard screen takes you back home
@@ -242,7 +240,7 @@ var storedScores = JSON.parse(localStorage.getItem ("storedScores"));
 function generateScore(){   
     var highscore = JSON.parse(localStorage.getItem("storedScores")) || [];
     highscore.sort(function (a, b) {
-        return a.storedScores, b.score ? 1 : -1;   
+        return a - b;
     });
 
     highscore.forEach(function (item) {
