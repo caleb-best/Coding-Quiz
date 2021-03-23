@@ -20,5 +20,5 @@ The application was designed through the use of HTML, CSS and made functional th
 
 
 ## Live Page ##
-Test the generator for yourself [Here]()
+Test the generator for yourself [Here](https://caleb-best.github.io/Coding-Quiz/)
 
